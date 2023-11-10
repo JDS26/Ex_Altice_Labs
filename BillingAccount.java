@@ -207,14 +207,14 @@ public class BillingAccount{
     public ChargingReply Request_Client(BillingAccount Client, String service, boolean roaming,int rsu){
         ChargingRequest CR = new ChargingRequest(service,roaming, Client.getMSISDN(),rsu);
         
-        return CR.Request(Client,service,roaming,rsu);
+        return CR.Request(CR,Client,service,roaming,rsu);
     }
     
     // método para um cliente criar um Charging request numa data especifica
     public ChargingReply Request_Client_Timed(BillingAccount Client, String service,LocalDateTime date, boolean roaming,int rsu){
         ChargingRequest CR = new ChargingRequest(service,date,roaming, Client.getMSISDN(),rsu);
         
-        return CR.Request_Timed(Client,service,date,roaming,rsu);
+        return CR.Request_Timed(CR,Client,service,date,roaming,rsu);
     }
     
     //funcoes que criam um hashMap dos buckets e Counters de um cliente, respetivamente

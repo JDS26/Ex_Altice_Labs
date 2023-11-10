@@ -230,9 +230,8 @@ public class ChargingRequest extends Charging{
     }
     
     // Funcao que efetua os pedidos dos clientes
-    public ChargingReply Request(BillingAccount Client, String service, boolean roaming,int rsu){
+    public ChargingReply Request(ChargingRequest CR,BillingAccount Client, String service, boolean roaming,int rsu){
         int tarifario = 0;
-        ChargingRequest CR = new ChargingRequest(service,roaming, Client.getMSISDN(),rsu);
         // é criado um novo Charging Request do Cliente que o pediu com as suas respetivas informações, bem como as informações do pedido
         if (service.equals("A")) { // se o cliente pretender o servico A será determinado qual o seu tarifario e, caso seja o caso, alterar nas suas informacoes de cliente
             tarifario = VerifyA(Client,CR);
@@ -253,9 +252,8 @@ public class ChargingRequest extends Charging{
     }
     
     // Funcao que efetua os pedidos dos clientes a uma hora programada
-    public ChargingReply Request_Timed(BillingAccount Client, String service, LocalDateTime Date, boolean roaming,int rsu){
+    public ChargingReply Request_Timed(ChargingRequest CR,BillingAccount Client, String service, LocalDateTime Date, boolean roaming,int rsu){
         int tarifario = 0;
-        ChargingRequest CR = new ChargingRequest(service,Date,roaming, Client.getMSISDN(),rsu);
         // é criado um novo Charging Request do Cliente que o pediu com as suas respetivas informações, bem como as informações do pedido
         if (service.equals("A")) {
             tarifario = VerifyA(Client,CR);
