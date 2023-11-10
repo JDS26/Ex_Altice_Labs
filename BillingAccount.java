@@ -7,12 +7,10 @@ public class BillingAccount{
     private double Bucket1;
     private double Bucket2;
     private double Bucket3;
-    // mudar isto
     private int CounterA;
     private int CounterB;
     private int CounterC;
     private LocalDateTime CounterD;
-    // 
     private String TServiceA; 
     private String TServiceB;
     private HashMap <String,CDR> CDRs= new HashMap<String,CDR>();
